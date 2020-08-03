@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyle from './styles/global';
+import {Container, ChocolateList} from './styles/style';
 
-function App() {
+
+function App(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div className = "App">
+      <>
+        <GlobalStyle/>
+        <Container>
+          <h1>Teste</h1>
+          <ChocolateList>
+            <li>AAAA</li>
+            <li>AAAA</li>
+            <li>AAAA</li>
+            <li>AAAA</li>
+          </ChocolateList>
+        </Container>
+      </>
+   </div>
   );
 }
 
 export default App;
+
+//Neste arquivo é que criamos os componentes que serão exportados para o index.js que serão posteriormente injetados no index.html.
