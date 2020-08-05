@@ -2,8 +2,9 @@ import axios from 'axios';
 
 const api = axios.create({
 
-  //baseURL:'http://localhost:3000'
-  baseURL:'https://jsonplaceholder.typicode.com/'
+  baseURL: process.env.REACT_APP_API
 
 });
 export default api;
+
+//Axios é a biblioteca necessária para operar as conexões com a API

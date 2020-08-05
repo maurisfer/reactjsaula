@@ -7,15 +7,15 @@ import api from './services/api';
 
 function App(){
 
-  const [infos, setInfos] = useState([]);
+  const [infos, setInfos] = useState([]);//[0,1] 0  Traz as informações da API, 1 - Altera as informações da API
 
   useEffect(()=>{
     async function loadInfos(){
       const response = await api.get('users');
       setInfos(response.data);
-    }
+    };
     loadInfos();
-  }, []);
+  }, []);//Chama a API através dos verbos HTTP e insere os dados solicitados através da response.data e depois carrega os dados através da loadInfos() para o componente.
 
   return (
    <div className = "App">
@@ -32,11 +32,11 @@ function App(){
                   <div>
                     <h2>{info.email}</h2>
                     <p>{info.name}</p>
-                    <p>Info 2</p>
+                    <p>{info.username}</p>
                   </div>
                 </div>
               </li>
-            ))};
+            ))}
           </ChocolateList>
         </Container>
       </>
