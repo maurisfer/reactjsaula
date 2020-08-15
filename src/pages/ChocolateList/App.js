@@ -1,8 +1,8 @@
 import React, {useState,useEffect} from 'react';
-import GlobalStyle from './styles/global';
-import {Container, ChocolateList} from './styles/style';
-import ChocolateImg from './assets/images/chocolate.svg';
-import api from './services/api';
+import GlobalStyle from '../../styles/global';
+import {Container, ChocolateList} from './style';
+import ChocolateImg from '../../assets/images/chocolate.svg';
+import api from '../../services/api';
 
 
 function App(){
@@ -12,7 +12,7 @@ function App(){
   useEffect(()=>{
     async function loadInfos(){
       const response = await api.get('/chocolates');
-      setInfos(response.data);
+      setInfos(response.data.chocolate);
     };
     loadInfos();
   }, []);//Chama a API através dos verbos HTTP e insere os dados solicitados através da response.data e depois carrega os dados através da loadInfos() para o componente.
@@ -36,14 +36,13 @@ function App(){
                   </div>
                 </div>
               </li>
-            ))};
+            ))}
           </ChocolateList>
         </Container>
       </>
    </div>
   );
 }
-
 export default App;
 
 //Neste arquivo é que criamos os componentes que serão exportados para o index.js que serão posteriormente injetados no index.html.

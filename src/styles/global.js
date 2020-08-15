@@ -19,4 +19,5 @@ export default createGlobalStyle`
   }
 `;
 
+
 //Neste arquivo se define a configuração dos estilos globais, aqueles que serão aplicados a mais de um elemento ou ainda a página inteira.
